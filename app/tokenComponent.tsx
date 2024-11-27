@@ -1,6 +1,6 @@
 "use client";
 import { getContract, Address } from "viem";
-import { contractAbi } from "./abi";
+import { newContractAbi } from "./abi";
 import { ConnectWalletClient } from "./client";
 import { useState } from "react";
 export default function TokenComponent() {
@@ -13,7 +13,7 @@ export default function TokenComponent() {
  const checkedAddress = contractAddress as Address;
  const contract = getContract({
  address: checkedAddress,
- abi: contractAbi,
+ abi: newContractAbi,
  client: walletClient,
  });
  console.log("Connected to Contract: ", contract);
